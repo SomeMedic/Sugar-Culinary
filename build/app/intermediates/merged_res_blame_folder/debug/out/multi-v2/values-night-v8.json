@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.sugar.culinary.app-mergeDebugResources-26:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "F:\\Work\\cooky-app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "from": {
+                        "startLines": "3,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "63,254",
+                        "endLines": "6,10",
+                        "endColumns": "12,12",
+                        "endOffsets": "242,420"
+                    },
+                    "to": {
+                        "startLines": "2,6",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,236",
+                        "endLines": "5,8",
+                        "endColumns": "12,12",
+                        "endOffsets": "231,400"
+                    }
+                }
+            ]
+        }
+    ]
+}

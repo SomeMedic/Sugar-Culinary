@@ -1,0 +1,1 @@
+ F:\\Work\\cooky-app\\.dart_tool\\flutter_gen\\gen_l10n\\app_localizations_en.dart F:\\Work\\cooky-app\\.dart_tool\\flutter_gen\\gen_l10n\\app_localizations_fr.dart F:\\Work\\cooky-app\\.dart_tool\\flutter_gen\\gen_l10n\\app_localizations.dart:  F:\\Work\\cooky-app\\l10n.yaml F:\\Work\\cooky-app\\lib/l10n\\app_en.arb F:\\Work\\cooky-app\\lib/l10n\\app_fr.arb
