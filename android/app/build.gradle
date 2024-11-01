@@ -23,7 +23,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace "com.sugar.culinary"
+    namespace "com.bl.agaaaazop.app.z"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
@@ -42,7 +42,7 @@ android {
 
     defaultConfig {
         
-        applicationId "com.sugar.culinary"
+        applicationId "com.bl.agaaaazop.app.z"
         
         
         minSdkVersion flutter.minSdkVersion
