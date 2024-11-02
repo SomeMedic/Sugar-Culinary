@@ -45,5 +45,19 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+        <string>For taking photos only.</string>
+
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>For adding pics from gallery.</string>
+
+        <key>NSPhotoLibraryAddUsageDescription</key>
+        <string>For saving pics to the gallery.</string>
+
+        <key>NSMicrophoneUsageDescription</key>
+        <string>For recording voice.</string>
+
+        <key>NSLocationWhenInUseUsageDescription</key>
+        <string>For geolocation access while recipe's photo is loading.</string>
 </dict>
 </plist>
