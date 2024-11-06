@@ -3,7 +3,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AddIngredientQuantity extends StatefulWidget {
   const AddIngredientQuantity({super.key});
@@ -22,7 +22,7 @@ class _AddIngredientQuantityState extends State<AddIngredientQuantity> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    units = AppLocalizations.of(context)!.listUnits.split(',');
+    units = "g, kg, mg, ml, l, cl, tsp, tbsp, pinch, drop, piece, tbspoz, pound, cup, pt, qt, gal".split(',');
   }
 
   void addQuantity(String value) {
@@ -61,7 +61,7 @@ class _AddIngredientQuantityState extends State<AddIngredientQuantity> {
         backgroundColor: AppColors.primary,
         elevation: 0,
         title: Text(
-          AppLocalizations.of(context)!.quantity,
+          "Quantity",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 20,
@@ -194,7 +194,7 @@ class _AddIngredientQuantityState extends State<AddIngredientQuantity> {
               ),
             ),
             onPressed: () => Navigator.pop(context),
-            child: Text(AppLocalizations.of(context)!.cancel),
+            child: Text("Cancel"),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -206,7 +206,7 @@ class _AddIngredientQuantityState extends State<AddIngredientQuantity> {
               ),
             ),
             onPressed: () => Navigator.pop(context, finalQuantity),
-            child: Text(AppLocalizations.of(context)!.add),
+            child: Text("Add"),
           ),
         ],
       ),

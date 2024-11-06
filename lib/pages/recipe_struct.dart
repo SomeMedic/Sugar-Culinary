@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sugarCulinary/data/recipe_database/database.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:ui' as ui;
 
@@ -169,8 +169,8 @@ class _RecipeStructState extends State<RecipeStruct> {
               padding: EdgeInsetsDirectional.fromSTEB(0, 200, 0, 100),
               child: AlertDialog(
                 title: Column(children: [
-                  Text(AppLocalizations.of(context)!.areYouSure),
-                  Text(AppLocalizations.of(context)!.confirmLongPress4,
+                  Text("Are you sure?"),
+                  Text("Confirm the desired option with a long press",
                       textAlign: TextAlign.center,
                       style:
                           TextStyle(fontSize: 15, fontStyle: FontStyle.italic))
@@ -189,7 +189,7 @@ class _RecipeStructState extends State<RecipeStruct> {
                     });
                   },
                   onPressed: () {},
-                  child: Text(AppLocalizations.of(context)!.confirmLongPress2,
+                  child: Text("Yes, I want to delete this recipe",
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.red)),
                 ),
@@ -198,7 +198,7 @@ class _RecipeStructState extends State<RecipeStruct> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: Text(AppLocalizations.of(context)!.back),
+                    child: Text("Back"),
                   ),
                 ],
               ));
@@ -239,7 +239,7 @@ class _RecipeStructState extends State<RecipeStruct> {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    child: Text(AppLocalizations.of(context)!.back),
+                    child: Text("Back"),
                   ),
                 ],
                 
@@ -354,8 +354,8 @@ class _RecipeStructState extends State<RecipeStruct> {
         children: [
           Text(
             isShowIngredientPressed
-                ? AppLocalizations.of(context)!.collapse
-                : AppLocalizations.of(context)!.showIngred,
+                ? "Collapse"
+                : "Show Ingredients",
             style: TextStyle(
               fontSize: 16,
             ),
@@ -532,7 +532,7 @@ class _RecipeStructState extends State<RecipeStruct> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      AppLocalizations.of(context)!.showIngred,
+                      "Show Ingredients",
                       style: TextStyle(
                         fontSize: 16,
                       ),
@@ -562,7 +562,7 @@ class _RecipeStructState extends State<RecipeStruct> {
                   ),
                 );
               },
-              label: Text(AppLocalizations.of(context)!.startToCook),
+              label: Text("Start to cook!"),
             ),
           ),
         ),

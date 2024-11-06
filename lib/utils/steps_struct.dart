@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -32,7 +32,7 @@ class ShowRecipeSteps extends StatelessWidget {
         backgroundColor: AppColors.primary,
         elevation: 0,
         title: Text(
-          AppLocalizations.of(context)!.steps,
+          "Steps",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 20,
@@ -67,7 +67,7 @@ class ShowRecipeSteps extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(
-                    "${AppLocalizations.of(context)!.stepCasLock} ${index + 1} / ${steps.length}",
+                    "${"STEP"} ${index + 1} / ${steps.length}",
                     style: TextStyle(
                       fontSize: 18,
                       color: AppColors.background,

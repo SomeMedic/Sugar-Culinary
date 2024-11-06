@@ -15,7 +15,7 @@ import 'package:sugarCulinary/pages/add_tags.dart';
 import 'package:sugarCulinary/pages/add_totaltime.dart';
 import 'package:sugarCulinary/pages/create_steps.dart';
 import 'package:sugarCulinary/utils/dialbox_edit.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:sugarCulinary/pages/recipe_struct.dart';
@@ -116,7 +116,7 @@ class _EditRecipeState extends State<EditRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.category,
+        "Category",
         style: TextStyle(
           fontSize: 16,
         ),
@@ -170,7 +170,7 @@ class _EditRecipeState extends State<EditRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.recipeName,
+        "Recipe name",
         style: TextStyle(
           fontSize: 16,
         ),
@@ -184,7 +184,7 @@ class _EditRecipeState extends State<EditRecipe> {
               overflow: TextOverflow.ellipsis,
               widget.editRecipeName,
               style:
-              widget.editRecipeName == AppLocalizations.of(context)!.deleted
+              widget.editRecipeName == "Deleted"
                   ? TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                   : TextStyle(
                 fontSize: 16,
@@ -223,7 +223,7 @@ class _EditRecipeState extends State<EditRecipe> {
             InkWell(
               onLongPress: () {
                 setState(() {
-                  widget.editRecipeName = AppLocalizations.of(context)!.deleted;
+                  widget.editRecipeName = "Deleted";
                 });
               },
               child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
@@ -263,14 +263,14 @@ class _EditRecipeState extends State<EditRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.totalTime,
+        "Total time",
         style: TextStyle(
           fontSize: 16,
         ),
       ),
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(widget.editTotalTime,
-            style: widget.editTotalTime == AppLocalizations.of(context)!.deleted
+            style: widget.editTotalTime == "Deleted"
                 ? TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                 : TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         Row(
@@ -305,7 +305,7 @@ class _EditRecipeState extends State<EditRecipe> {
             InkWell(
               onLongPress: () {
                 setState(() {
-                  widget.editTotalTime = AppLocalizations.of(context)!.deleted;
+                  widget.editTotalTime = "Deleted";
                   Text(
                     widget.editTotalTime,
                     style: TextStyle(
@@ -352,7 +352,7 @@ class _EditRecipeState extends State<EditRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.difficulty,
+        "Difficulty",
         style: TextStyle(
           fontSize: 16,
         ),
@@ -360,7 +360,7 @@ class _EditRecipeState extends State<EditRecipe> {
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(widget.editDifficulty,
             style:
-            widget.editDifficulty == AppLocalizations.of(context)!.deleted
+            widget.editDifficulty == "Deleted"
                 ? TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                 : TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         Row(
@@ -395,7 +395,7 @@ class _EditRecipeState extends State<EditRecipe> {
             InkWell(
               onLongPress: () {
                 setState(() {
-                  widget.editDifficulty = AppLocalizations.of(context)!.deleted;
+                  widget.editDifficulty = "Deleted";
                 });
               },
               child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
@@ -434,14 +434,14 @@ class _EditRecipeState extends State<EditRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.cost,
+        "Cost",
         style: TextStyle(
           fontSize: 16,
         ),
       ),
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(widget.editCost,
-            style: widget.editCost == AppLocalizations.of(context)!.deleted
+            style: widget.editCost == "Deleted"
                 ? TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                 : TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         Row(
@@ -476,7 +476,7 @@ class _EditRecipeState extends State<EditRecipe> {
             InkWell(
               onLongPress: () {
                 setState(() {
-                  widget.editCost = AppLocalizations.of(context)!.deleted;
+                  widget.editCost = "Deleted";
                 });
               },
               child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
@@ -531,7 +531,7 @@ class _EditRecipeState extends State<EditRecipe> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text(AppLocalizations.of(context)!.close),
+                child: Text("Close"),
               ),
             ],
           );
@@ -561,7 +561,7 @@ class _EditRecipeState extends State<EditRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.picture,
+        "Picture : ",
         style: TextStyle(
           fontSize: 16,
         ),
@@ -573,7 +573,7 @@ class _EditRecipeState extends State<EditRecipe> {
             },
             child: Text(
               previewImageTextField =
-                  AppLocalizations.of(context)!.previewPicture,
+                  "Preview picture",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -631,19 +631,19 @@ class _EditRecipeState extends State<EditRecipe> {
                         controller: editName,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          hintText: AppLocalizations.of(context)!.ingredName,
+                          hintText: "Ingredient name",
                         )),
                     TextField(
                         controller: editQuantity,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          hintText: AppLocalizations.of(context)!.quantity,
+                          hintText: "Quantity",
                         )),
                     TextField(
                         controller: editUnit,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          hintText: AppLocalizations.of(context)!.unit,
+                          hintText: "Unit",
                         ))
                   ])),
               actions: [
@@ -651,7 +651,7 @@ class _EditRecipeState extends State<EditRecipe> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      child: Text(AppLocalizations.of(context)!.cancel),
+                      child: Text("Cancel"),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -660,7 +660,7 @@ class _EditRecipeState extends State<EditRecipe> {
                       width: 10,
                     ),
                     ElevatedButton(
-                      child: Text(AppLocalizations.of(context)!.add),
+                      child: Text("Add"),
                       onPressed: () async {
                         widget.editAllIngredient[index][0] = editName.text;
                         widget.editAllIngredient[index][1] = editQuantity.text;
@@ -711,8 +711,8 @@ class _EditRecipeState extends State<EditRecipe> {
             children: [
               Text(
                 isShowIngredientsSelectedPressed
-                    ? AppLocalizations.of(context)!.collapse
-                    : AppLocalizations.of(context)!.showIngred,
+                    ? "Collapse"
+                    : "Show Ingredients",
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -879,8 +879,8 @@ class _EditRecipeState extends State<EditRecipe> {
             children: [
               Text(
                 isshowStepsAddedPressed
-                    ? AppLocalizations.of(context)!.collapse
-                    : AppLocalizations.of(context)!.showSteps,
+                    ? "Collapse"
+                    : "Show steps",
                 style: TextStyle(
                   fontSize: 16,
                 ),
@@ -931,7 +931,7 @@ class _EditRecipeState extends State<EditRecipe> {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(
-                ' ${AppLocalizations.of(context)!.step} ${index + 1}:\n${widget.editStepsRecipe[index]}'),
+                ' ${"Step"} ${index + 1}:\n${widget.editStepsRecipe[index]}'),
             trailing: Wrap(
               spacing: -16,
               children: [
@@ -1011,14 +1011,7 @@ class _EditRecipeState extends State<EditRecipe> {
           },
           child: Row(
             children: [
-              Text(
-                isshowTagsAddedPressed
-                    ? AppLocalizations.of(context)!.collapse
-                    : AppLocalizations.of(context)!.showTags,
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-              ),
+
               Icon(
                 isshowTagsAddedPressed
                     ? Icons.arrow_downward
@@ -1120,19 +1113,19 @@ class _EditRecipeState extends State<EditRecipe> {
             content: SizedBox(
                 height: 200.0,
                 child: Column(children: [
-                  Text(AppLocalizations.of(context)!.areYouSureExit,
+                  Text("Are you sure you want to exit?",
                       textAlign: TextAlign.center,
                       style:
                       TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   Center(
-                      child: Text(AppLocalizations.of(context)!.saveEditLater,
+                      child: Text("You can save changes and edit later",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 15, fontStyle: FontStyle.italic)))
                 ])),
             actions: <Widget>[
               TextButton(
-                child: Text(AppLocalizations.of(context)!.confirmExit,
+                child: Text("Yes, exit",
                     style: TextStyle(color: Colors.red)),
                 onPressed: () {
                   setState(() {
@@ -1146,7 +1139,7 @@ class _EditRecipeState extends State<EditRecipe> {
                 },
               ),
               TextButton(
-                child: Text(AppLocalizations.of(context)!.no,
+                child: Text("No",
                     style: TextStyle(color: Colors.lightGreen)),
                 onPressed: () {
                   Navigator.of(context).pop(false);
@@ -1165,7 +1158,7 @@ class _EditRecipeState extends State<EditRecipe> {
         backgroundColor: AppColors.primary,
         elevation: 0,
         title: Text(
-        AppLocalizations.of(context)!.editRecipe,
+        "Edit recipe",
     style: TextStyle(
     color: AppColors.background,
     fontSize: 24,
@@ -1190,47 +1183,47 @@ class _EditRecipeState extends State<EditRecipe> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _buildSection(
-                title: AppLocalizations.of(context)!.category,
+                title: "Category",
                 child: addCategory(),
               ),
               _buildDivider(),
               _buildSection(
-                title: AppLocalizations.of(context)!.recipeName,
+                title: "Recipe name",
                 child: addRecipeName(),
               ),
               _buildDivider(),
               _buildSection(
-                title: AppLocalizations.of(context)!.totalTime,
+                title: "Total time",
                 child: addTotalTime(),
               ),
               _buildDivider(),
               _buildSection(
-                title: AppLocalizations.of(context)!.difficulty,
+                title: "Difficulty",
                 child: addDifficulty(),
               ),
               _buildDivider(),
               _buildSection(
-                title: AppLocalizations.of(context)!.cost,
+                title: "Cost",
                 child: addCost(),
               ),
               _buildDivider(),
               _buildSection(
-                title: AppLocalizations.of(context)!.picture,
+                title: "Picture : ",
                 child: addPicture(),
               ),
               _buildDivider(),
               _buildSection(
-                title: AppLocalizations.of(context)!.ingredients,
+                title: "Ingredients",
                 child: addIngred(),
               ),
               _buildDivider(),
               _buildSection(
-                title: AppLocalizations.of(context)!.steps,
+                title: "Steps",
                 child: addSteps(),
               ),
               _buildDivider(),
               _buildSection(
-                title: AppLocalizations.of(context)!.tags,
+                title: "Tags",
                 child: addTags(),
               ),
               _buildDivider(),
@@ -1295,7 +1288,7 @@ class _EditRecipeState extends State<EditRecipe> {
         ),
         onPressed: _submitForm,
         child: Text(
-          AppLocalizations.of(context)!.saveChanges,
+          "Save changes",
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w600,
@@ -1308,22 +1301,22 @@ class _EditRecipeState extends State<EditRecipe> {
   void _submitForm() {
     
     final finalEditRecipeName = widget.editRecipeName ==
-        AppLocalizations.of(context)!.deleted
-        ? AppLocalizations.of(context)!.noTitle
+        "Deleted"
+        ? "No title"
         : widget.editRecipeName;
 
     final finalEditTotalTime = widget.editTotalTime ==
-        AppLocalizations.of(context)!.deleted
+        "Deleted"
         ? ""
         : widget.editTotalTime;
 
     final finalEditDifficulty = widget.editDifficulty ==
-        AppLocalizations.of(context)!.deleted
+        "Deleted"
         ? ""
         : widget.editDifficulty;
 
     final finalEditCost =
-    widget.editCost == AppLocalizations.of(context)!.deleted
+    widget.editCost == "Deleted"
         ? ""
         : widget.editCost;
 

@@ -3,7 +3,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -36,7 +36,6 @@ class _AddTagsState extends State<AddTags> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    tags = AppLocalizations.of(context)!.listTags.split(',');
     filteredList = tags;
 
     _searchController = TextEditingController();
@@ -64,7 +63,7 @@ class _AddTagsState extends State<AddTags> {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         title: Text(
-          AppLocalizations.of(context)!.addTags,
+          "Add tags",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 24,
@@ -94,7 +93,7 @@ class _AddTagsState extends State<AddTags> {
                         icon: Icon(Icons.clear, color: AppColors.primary),
                       )
                     : null,
-                hintText: AppLocalizations.of(context)!.searchTag,
+                hintText: "Search a tag",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: AppColors.primary),
@@ -207,7 +206,7 @@ class _AddTagsState extends State<AddTags> {
                 Expanded(
                   child: _buildButton(
                     icon: Icons.add,
-                    text: AppLocalizations.of(context)!.addTag,
+                    text: "Add a tag",
                     onPressed: () => _showAddDialog(context),
                   ),
                 ),
@@ -215,7 +214,7 @@ class _AddTagsState extends State<AddTags> {
                 Expanded(
                   child: _buildButton(
                     icon: Icons.check,
-                    text: AppLocalizations.of(context)!.add,
+                    text: "Add",
                     onPressed: () => Navigator.pop(context, selectedTags),
                   ),
                 ),
@@ -262,7 +261,7 @@ class _AddTagsState extends State<AddTags> {
           borderRadius: BorderRadius.circular(16),
         ),
         title: Text(
-          AppLocalizations.of(context)!.addTag,
+          "Add a tag",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 20,
@@ -274,7 +273,7 @@ class _AddTagsState extends State<AddTags> {
           decoration: InputDecoration(
             filled: true,
             fillColor: AppColors.primaryLight.withOpacity(0.1),
-            hintText: AppLocalizations.of(context)!.writeTag,
+            hintText: "Write a tag here",
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
             ),
@@ -293,7 +292,7 @@ class _AddTagsState extends State<AddTags> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildDialogButton(
-                text: AppLocalizations.of(context)!.cancel,
+                text: "Cancel",
                 onPressed: () {
                   Navigator.pop(context);
                   _controller.clear();
@@ -302,7 +301,7 @@ class _AddTagsState extends State<AddTags> {
               ),
               SizedBox(width: 16),
               _buildDialogButton(
-                text: AppLocalizations.of(context)!.add,
+                text: "Add",
                 onPressed: () {
                   if (_controller.text.isNotEmpty) {
                     selectedTags.add(_controller.text);

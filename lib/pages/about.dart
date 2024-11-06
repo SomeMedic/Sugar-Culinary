@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -64,7 +64,7 @@ class _AboutState extends State<About> {
           elevation: 0,
           backgroundColor: AppColors.primary,
           title: Text(
-            AppLocalizations.of(context)!.about,
+            "About",
             style: TextStyle(
               color: AppColors.background,
               fontSize: 24,
@@ -100,7 +100,7 @@ class _AboutState extends State<About> {
                   ),
                   SizedBox(height: 15),
                   Text(
-                    "Cooky",
+                    "Sugar Culinary",
                     style: TextStyle(
                       color: AppColors.background,
                       fontSize: 28,
@@ -116,13 +116,13 @@ class _AboutState extends State<About> {
                 children: [
                   _buildInfoCard(
                     icon: Icons.info_outline,
-                    title: AppLocalizations.of(context)!.version,
+                    title: "Version",
                     value: _packageInfo.version,
                   ),
                   SizedBox(height: 16),
                   _buildInfoCard(
                     icon: Icons.copyright,
-                    title: AppLocalizations.of(context)!.licence,
+                    title: "License",
                     value: "BETA VERSION",
                   ),
                 ],
@@ -198,7 +198,7 @@ class _AboutState extends State<About> {
                   ),
                   SizedBox(height: 12),
                   Text(
-                    "Cooky",
+                    "Sugar Culinary",
                     style: TextStyle(
                       color: AppColors.background,
                       fontSize: 24,
@@ -211,19 +211,19 @@ class _AboutState extends State<About> {
             _buildDrawerItem(
               context: context,
               icon: Icons.home,
-              title: AppLocalizations.of(context)!.home,
+              title: "Home",
               route: '/home',
             ),
             _buildDrawerItem(
               context: context,
               icon: Icons.language_sharp,
-              title: AppLocalizations.of(context)!.language,
+              title: "Language",
               route: '/language',
             ),
             _buildDrawerItem(
               context: context,
               icon: Icons.info_outline,
-              title: AppLocalizations.of(context)!.about,
+              title: "About",
               route: '/about',
             ),
           ],

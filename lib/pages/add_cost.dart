@@ -3,7 +3,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AddCost extends StatefulWidget {
   const AddCost({super.key});
@@ -20,7 +20,7 @@ class _AddCostState extends State<AddCost> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    costList = AppLocalizations.of(context)!.listCost.split(',');
+    costList = 'Budget-friendly,Average,Expensive'.split(',');
   }
 
   @override
@@ -30,7 +30,7 @@ class _AddCostState extends State<AddCost> {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         title: Text(
-          AppLocalizations.of(context)!.addCost,
+          "Add cost",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 24,
@@ -105,7 +105,7 @@ class _AddCostState extends State<AddCost> {
           borderRadius: BorderRadius.circular(16),
         ),
         title: Text(
-          AppLocalizations.of(context)!.addCost,
+          "Add cost",
           textAlign: TextAlign.center,
           style: TextStyle(
             color: AppColors.text,
@@ -138,7 +138,7 @@ class _AddCostState extends State<AddCost> {
             children: [
               _buildDialogButton(
                 context: context,
-                text: AppLocalizations.of(context)!.cancel,
+                text: "Cancel",
                 onPressed: () {
                   Navigator.pop(context);
                   _controller.clear();
@@ -148,7 +148,7 @@ class _AddCostState extends State<AddCost> {
               SizedBox(width: 16),
               _buildDialogButton(
                 context: context,
-                text: AppLocalizations.of(context)!.add,
+                text: "Add",
                 onPressed: () {
                   Navigator.pop(context);
                   Navigator.pop(context, _controller.text);

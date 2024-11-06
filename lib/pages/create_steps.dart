@@ -3,7 +3,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -32,7 +32,7 @@ class DialogAddSteps extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
       ),
       title: Text(
-        AppLocalizations.of(context)!.addNewStep,
+        "Add a new step",
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
@@ -49,7 +49,7 @@ class DialogAddSteps extends StatelessWidget {
                 controller: controller,
                 maxLines: null,
                 decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.writeStep,
+                  hintText: "Write the step here",
                   filled: true,
                   fillColor: AppColors.primaryLight.withOpacity(0.1),
                   border: OutlineInputBorder(
@@ -75,7 +75,7 @@ class DialogAddSteps extends StatelessWidget {
                     foregroundColor: AppColors.text,
                   ),
                   onPressed: () => Navigator.pop(context),
-                  child: Text(AppLocalizations.of(context)!.cancel),
+                  child: Text("Cancel"),
                 ),
                 SizedBox(width: 16),
                 ElevatedButton(
@@ -88,7 +88,7 @@ class DialogAddSteps extends StatelessWidget {
                     ),
                   ),
                   onPressed: () => Navigator.pop(context, controller.text),
-                  child: Text(AppLocalizations.of(context)!.add),
+                  child: Text("Add"),
                 ),
               ],
             ),
@@ -114,7 +114,7 @@ class DialogEditStep extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
       ),
       title: Text(
-        AppLocalizations.of(context)!.editStep,
+        "Edit step",
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
@@ -156,7 +156,7 @@ class DialogEditStep extends StatelessWidget {
                     foregroundColor: AppColors.text,
                   ),
                   onPressed: () => Navigator.pop(context),
-                  child: Text(AppLocalizations.of(context)!.cancel),
+                  child: Text("Cancel"),
                 ),
                 SizedBox(width: 16),
                 ElevatedButton(
@@ -169,7 +169,7 @@ class DialogEditStep extends StatelessWidget {
                     ),
                   ),
                   onPressed: () => Navigator.pop(context, controller.text),
-                  child: Text(AppLocalizations.of(context)!.save),
+                  child: Text("Save"),
                 ),
               ],
             ),
@@ -199,7 +199,7 @@ class _CreateStepsState extends State<CreateSteps> {
         backgroundColor: AppColors.primary,
         elevation: 0,
         title: Text(
-          AppLocalizations.of(context)!.addSteps,
+          "Add steps",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 24,
@@ -216,7 +216,7 @@ class _CreateStepsState extends State<CreateSteps> {
               child: stepsRecipe.isEmpty 
                 ? Center(
                     child: Text(
-                      AppLocalizations.of(context)!.noSteps,
+                      "No steps",
                       style: TextStyle(
                         color: AppColors.text.withOpacity(0.5),
                         fontSize: 16,
@@ -243,7 +243,7 @@ class _CreateStepsState extends State<CreateSteps> {
                     ),
                     onPressed: _addNewStep,
                     icon: Icon(Icons.add),
-                    label: Text(AppLocalizations.of(context)!.addNewStep),
+                    label: Text("Add a new step"),
                   ),
                 ),
                 if (stepsRecipe.isNotEmpty) ...[
@@ -258,7 +258,7 @@ class _CreateStepsState extends State<CreateSteps> {
                       ),
                     ),
                     onPressed: () => Navigator.pop(context, stepsRecipe),
-                    child: Text(AppLocalizations.of(context)!.add),
+                    child: Text("Add"),
                   ),
                 ],
               ],
@@ -281,7 +281,7 @@ class _CreateStepsState extends State<CreateSteps> {
       ),
       child: ListTile(
         title: Text(
-          '${AppLocalizations.of(context)!.step} ${index + 1}',
+          '${"Step"} ${index + 1}',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: AppColors.primary,

@@ -3,7 +3,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -47,7 +47,7 @@ class _AddTotalTimeState extends State<AddTotalTime> {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         title: Text(
-          AppLocalizations.of(context)!.addTotalTime,
+          "Add total time",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 24,
@@ -111,7 +111,7 @@ class _AddTotalTimeState extends State<AddTotalTime> {
           borderRadius: BorderRadius.circular(16),
         ),
         title: Text(
-          AppLocalizations.of(context)!.addTotalTime,
+          "Add total time",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 20,
@@ -141,7 +141,7 @@ class _AddTotalTimeState extends State<AddTotalTime> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildDialogButton(
-                text: AppLocalizations.of(context)!.cancel,
+                text: "Cancel",
                 onPressed: () {
                   Navigator.pop(context);
                   _controller.clear();
@@ -150,7 +150,7 @@ class _AddTotalTimeState extends State<AddTotalTime> {
               ),
               SizedBox(width: 16),
               _buildDialogButton(
-                text: AppLocalizations.of(context)!.add,
+                text: "Add",
                 onPressed: () {
                   Navigator.pop(context);
                   Navigator.pop(context, _controller.text);

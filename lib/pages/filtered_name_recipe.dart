@@ -7,7 +7,7 @@ import 'package:sugarCulinary/pages/recipe_struct.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -66,9 +66,9 @@ class _FilteredNameRecipeState extends State<FilteredNameRecipe> {
     super.didChangeDependencies();
 
     _confirmationTextDeleteOneRecipe =
-        AppLocalizations.of(context)!.confirmLongPress2;
+        "Yes, I want to delete this recipe";
     _confirmationTextDeleteAllRecipe =
-        AppLocalizations.of(context)!.confirmLongPress3;
+        "Yes, I want to delete all recipes";
   }
 
   
@@ -158,8 +158,8 @@ class _FilteredNameRecipeState extends State<FilteredNameRecipe> {
               padding: const EdgeInsetsDirectional.fromSTEB(0, 200, 0, 100),
               child: AlertDialog(
                 title: Column(children: [
-                  Text(AppLocalizations.of(context)!.areYouSure),
-                  Text(AppLocalizations.of(context)!.confirmLongPress4,
+                  Text("Are you sure?"),
+                  Text("Confirm the desired option with a long press",
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                           fontSize: 15, fontStyle: FontStyle.italic))
@@ -193,7 +193,7 @@ class _FilteredNameRecipeState extends State<FilteredNameRecipe> {
                       });
                       Navigator.of(context).pop();
                     },
-                    child: Text(AppLocalizations.of(context)!.back),
+                    child: Text("Back"),
                   ),
                 ],
               ));
@@ -244,7 +244,7 @@ class _FilteredNameRecipeState extends State<FilteredNameRecipe> {
             itemBuilder: (context) => [
               PopupMenuItem(
                 value: 0,
-                child: Text(AppLocalizations.of(context)!.editDelete),
+                child: Text("Edit/Delete"),
               ),
             ],
           ),
@@ -258,7 +258,7 @@ class _FilteredNameRecipeState extends State<FilteredNameRecipe> {
               child: TextField(
                 controller: _searchController,
                 decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.search,
+                  hintText: "Search",
                   prefixIcon: Icon(Icons.search, color: AppColors.primary),
                   suffixIcon: IconButton(
                     icon: Icon(Icons.clear, color: AppColors.primary),

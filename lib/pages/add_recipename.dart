@@ -3,7 +3,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -34,7 +34,6 @@ class _AddRecipeNameState extends State<AddRecipeName> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    recipeNameList = AppLocalizations.of(context)!.listCommonDishes.split(',');
     filteredList = recipeNameList;
     _searchController = TextEditingController();
   }
@@ -56,7 +55,7 @@ class _AddRecipeNameState extends State<AddRecipeName> {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         title: Text(
-          AppLocalizations.of(context)!.addRecipeName,
+          "Add a recipe name",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 24,
@@ -87,7 +86,7 @@ class _AddRecipeNameState extends State<AddRecipeName> {
                         icon: Icon(Icons.clear, color: AppColors.primary),
                       )
                     : null,
-                hintText: AppLocalizations.of(context)!.searchRecipeName,
+                hintText: "Search a recipe name",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: AppColors.primary),
@@ -160,7 +159,7 @@ class _AddRecipeNameState extends State<AddRecipeName> {
           borderRadius: BorderRadius.circular(16),
         ),
         title: Text(
-          AppLocalizations.of(context)!.addRecipeName,
+          "Add a recipe name",
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 20,
@@ -190,7 +189,7 @@ class _AddRecipeNameState extends State<AddRecipeName> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildDialogButton(
-                text: AppLocalizations.of(context)!.cancel,
+                text: "Cancel",
                 onPressed: () {
                   Navigator.pop(context);
                   _controller.clear();
@@ -199,7 +198,7 @@ class _AddRecipeNameState extends State<AddRecipeName> {
               ),
               SizedBox(width: 16),
               _buildDialogButton(
-                text: AppLocalizations.of(context)!.add,
+                text: "Add",
                 onPressed: () {
                   Navigator.pop(context);
                   Navigator.pop(context, _controller.text);

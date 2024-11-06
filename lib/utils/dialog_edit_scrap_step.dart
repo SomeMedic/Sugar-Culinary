@@ -3,7 +3,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -83,7 +83,7 @@ class DialogEditStep extends StatelessWidget {
                   ),
                   onPressed: () => Navigator.pop(context),
                   child: Text(
-                    AppLocalizations.of(context)!.cancel,
+                    "Cancel",
                     style: TextStyle(fontWeight: FontWeight.w500),
                   ),
                 ),
@@ -99,7 +99,7 @@ class DialogEditStep extends StatelessWidget {
                   ),
                   onPressed: () => Navigator.pop(context, controller.text),
                   child: Text(
-                    AppLocalizations.of(context)!.saveChanges,
+                    "Save changes",
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ),

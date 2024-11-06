@@ -1,7 +1,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -29,7 +29,6 @@ class _AddDifficultyState extends State<AddDifficulty> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    difficultyList = AppLocalizations.of(context)!.listDifficulty.split(',');
   }
 
   @override
@@ -39,7 +38,7 @@ class _AddDifficultyState extends State<AddDifficulty> {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         title: Text(
-          AppLocalizations.of(context)!.addDifficulty,
+          "Add difficulty",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 24,
@@ -114,7 +113,7 @@ class _AddDifficultyState extends State<AddDifficulty> {
           borderRadius: BorderRadius.circular(16),
         ),
         title: Text(
-          AppLocalizations.of(context)!.addDifficulty,
+          "Add difficulty",
           textAlign: TextAlign.center,
           style: TextStyle(
             color: AppColors.text,
@@ -147,7 +146,7 @@ class _AddDifficultyState extends State<AddDifficulty> {
             children: [
               _buildDialogButton(
                 context: context,
-                text: AppLocalizations.of(context)!.cancel,
+                text: "Cancel",
                 onPressed: () {
                   Navigator.pop(context);
                   _controller.clear();
@@ -157,7 +156,7 @@ class _AddDifficultyState extends State<AddDifficulty> {
               SizedBox(width: 16),
               _buildDialogButton(
                 context: context,
-                text: AppLocalizations.of(context)!.add,
+                text: "Add",
                 onPressed: () {
                   Navigator.pop(context);
                   Navigator.pop(context, _controller.text);

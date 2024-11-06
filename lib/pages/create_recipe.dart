@@ -15,7 +15,7 @@ import 'package:sugarCulinary/pages/add_tags.dart';
 import 'package:sugarCulinary/pages/add_totaltime.dart';
 import 'package:sugarCulinary/pages/create_steps.dart';
 import 'package:sugarCulinary/utils/dialbox_edit.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:sugarCulinary/pages/recipe_struct.dart';
@@ -83,13 +83,13 @@ class _CreateRecipeState extends State<CreateRecipe> {
         builder: (context) {
           return AlertDialog(
             content: Text(
-              AppLocalizations.of(context)!.categoryEmpty,
+              "Category is required.",
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.red),
             ),
             actions: [
               ElevatedButton(
-                child: Text(AppLocalizations.of(context)!.back),
+                child: Text("Back"),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -126,7 +126,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.category,
+        "Category",
         style: TextStyle(
           fontSize: 16,
         ),
@@ -136,7 +136,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
         children: [
           Text(
             isButtonAddCategoryVisible
-                ? AppLocalizations.of(context)!.noCategorySelected
+                ? "No category selected"
                 : recipeCategoryFromAddExistingCategory,
             style: TextStyle(
               fontSize: 16,
@@ -186,7 +186,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.recipeName,
+        "Recipe name",
         style: TextStyle(
           fontSize: 16,
         ),
@@ -199,12 +199,12 @@ class _CreateRecipeState extends State<CreateRecipe> {
               width: 200,
               child: Text(
                   isButtonAddRecipeNameVisible
-                      ? AppLocalizations.of(context)!.noTitle
+                      ? "No title"
                       : recipeNameFromAddRecipeName,
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                   style: recipeNameFromAddRecipeName ==
-                      AppLocalizations.of(context)!.deleted
+                      "Deleted"
                       ? TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                       : TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
           Row(
@@ -240,7 +240,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                 onLongPress: () {
                   setState(() {
                     recipeNameFromAddRecipeName =
-                        AppLocalizations.of(context)!.deleted;
+                        "Deleted";
                   });
                 },
                 child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
@@ -282,7 +282,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.totalTime,
+        "Total time",
         style: TextStyle(
           fontSize: 16,
         ),
@@ -290,10 +290,10 @@ class _CreateRecipeState extends State<CreateRecipe> {
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(
             isButtonAddTotalTimeVisible
-                ? AppLocalizations.of(context)!.noTimeSelected
+                ? "No time selected"
                 : totalTimeFromAddTotalTime,
             style: totalTimeFromAddTotalTime ==
-                AppLocalizations.of(context)!.deleted
+                "Deleted"
                 ? TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                 : TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         Row(
@@ -329,7 +329,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
               onLongPress: () {
                 setState(() {
                   totalTimeFromAddTotalTime =
-                      AppLocalizations.of(context)!.deleted;
+                      "Deleted";
                   Text(
                     totalTimeFromAddTotalTime,
                     style: TextStyle(
@@ -377,7 +377,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.difficulty,
+        "Difficulty",
         style: TextStyle(
           fontSize: 16,
         ),
@@ -385,10 +385,10 @@ class _CreateRecipeState extends State<CreateRecipe> {
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(
             isButtonAddDifficultyVisible
-                ? AppLocalizations.of(context)!.noDifficultySelected
+                ? "No difficulty selected"
                 : varFromAddDifficulty,
             style: varFromAddDifficulty ==
-                AppLocalizations.of(context)!.deleted
+                "Deleted"
                 ? TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                 : TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         Row(
@@ -424,7 +424,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
               onLongPress: () {
                 setState(() {
                   varFromAddDifficulty =
-                      AppLocalizations.of(context)!.deleted;
+                      "Deleted";
                 });
               },
               child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
@@ -464,7 +464,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.cost,
+        "Cost",
         style: TextStyle(
           fontSize: 16,
         ),
@@ -472,9 +472,9 @@ class _CreateRecipeState extends State<CreateRecipe> {
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(
             isButtonAddCostVisible
-                ? AppLocalizations.of(context)!.noCostSelected
+                ? "No cost selected"
                 : varFromAddCost,
-            style: varFromAddCost == AppLocalizations.of(context)!.deleted
+            style: varFromAddCost == "Deleted"
                 ? TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                 : TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         Row(
@@ -508,7 +508,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
             InkWell(
               onLongPress: () {
                 setState(() {
-                  varFromAddCost = AppLocalizations.of(context)!.deleted;
+                  varFromAddCost = "Deleted";
                 });
               },
               child: Icon(Icons.delete, size: 20, color: Colors.redAccent),
@@ -548,7 +548,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text(AppLocalizations.of(context)!.close),
+                child: Text("Close"),
               ),
             ],
           );
@@ -578,7 +578,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.picture,
+        "Picture : ",
         style: TextStyle(
           fontSize: 16,
         ),
@@ -590,9 +590,9 @@ class _CreateRecipeState extends State<CreateRecipe> {
             },
             child: Text(
               isButtonAddPictureVisible
-                  ? AppLocalizations.of(context)!.noPictureSelected
+                  ? "No picture selected"
                   : previewImageTextField =
-                  AppLocalizations.of(context)!.previewPicture,
+                  "Preview picture",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -649,19 +649,19 @@ class _CreateRecipeState extends State<CreateRecipe> {
                         controller: editName,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          hintText: AppLocalizations.of(context)!.ingredName,
+                          hintText: "Ingredient name",
                         )),
                     TextField(
                         controller: editQuantity,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          hintText: AppLocalizations.of(context)!.quantity,
+                          hintText: "Quantity",
                         )),
                     TextField(
                         controller: editUnit,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          hintText: AppLocalizations.of(context)!.unit,
+                          hintText: "Unit",
                         ))
                   ])),
               actions: [
@@ -669,7 +669,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      child: Text(AppLocalizations.of(context)!.cancel),
+                      child: Text("Cancel"),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -678,7 +678,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                       width: 10,
                     ),
                     ElevatedButton(
-                      child: Text(AppLocalizations.of(context)!.add),
+                      child: Text("Add"),
                       onPressed: () async {
                         allIngredientSelectedCreateRecipe[index][0] =
                             editName.text;
@@ -735,8 +735,8 @@ class _CreateRecipeState extends State<CreateRecipe> {
               children: [
                 Text(
                   isShowIngredientsSelectedPressed
-                      ? AppLocalizations.of(context)!.collapse
-                      : AppLocalizations.of(context)!.showIngred,
+                      ? "Collapse"
+                      : "Show Ingredients",
                   style: TextStyle(
                     fontSize: 16,
                   ),
@@ -873,8 +873,8 @@ class _CreateRecipeState extends State<CreateRecipe> {
               children: [
                 Text(
                   isshowStepsAddedPressed
-                      ? AppLocalizations.of(context)!.collapse
-                      : AppLocalizations.of(context)!.showSteps,
+                      ? "Collapse"
+                      : "Show steps",
                   style: TextStyle(
                     fontSize: 16,
                   ),
@@ -924,7 +924,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(
-                '  ${AppLocalizations.of(context)!.step} ${index + 1}:\n${stepsRecipeFromCreateSteps[index]}'),
+                '  ${"Step"} ${index + 1}:\n${stepsRecipeFromCreateSteps[index]}'),
             trailing: Wrap(
               spacing: -16,
               children: [
@@ -1006,14 +1006,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
             },
             child: Row(
               children: [
-                Text(
-                  isshowTagsAddedPressed
-                      ? AppLocalizations.of(context)!.collapse
-                      : AppLocalizations.of(context)!.showTags,
-                  style: TextStyle(
-                    fontSize: 16,
-                  ),
-                ),
+
                 Icon(
                   isshowTagsAddedPressed
                       ? Icons.arrow_downward
@@ -1114,19 +1107,19 @@ class _CreateRecipeState extends State<CreateRecipe> {
             content: SizedBox(
                 height: 200.0,
                 child: Column(children: [
-                  Text(AppLocalizations.of(context)!.areYouSureExit,
+                  Text("Are you sure you want to exit?",
                       textAlign: TextAlign.center,
                       style:
                       TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   Center(
-                      child: Text(AppLocalizations.of(context)!.saveEditLater,
+                      child: Text("You can save changes and edit later",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 15, fontStyle: FontStyle.italic)))
                 ])),
             actions: <Widget>[
               TextButton(
-                child: Text(AppLocalizations.of(context)!.confirmExit,
+                child: Text("Yes, exit",
                     style: TextStyle(color: Colors.red)),
                 onPressed: () {
                   setState(() {
@@ -1140,7 +1133,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
                 },
               ),
               TextButton(
-                child: Text(AppLocalizations.of(context)!.no,
+                child: Text("No",
                     style: TextStyle(color: Colors.lightGreen)),
                 onPressed: () {
                   Navigator.of(context).pop(false);
@@ -1158,7 +1151,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
         appBar: AppBar(
         backgroundColor: AppColors.primary,
         elevation: 0,
-        title: Text(         AppLocalizations.of(context)!.createRecipe,
+        title: Text(         "Create a recipe",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 24,
@@ -1183,47 +1176,47 @@ class _CreateRecipeState extends State<CreateRecipe> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _buildSection(
-                  title: AppLocalizations.of(context)!.category,
+                  title: "Category",
                   child: addCategory(),
                 ),
                 _buildDivider(),
                 _buildSection(
-                  title: AppLocalizations.of(context)!.recipeName,
+                  title: "Recipe name",
                   child: addRecipeName(),
                 ),
                 _buildDivider(),
                 _buildSection(
-                  title: AppLocalizations.of(context)!.totalTime,
+                  title: "Total time",
                   child: addTotalTime(),
                 ),
                 _buildDivider(),
                 _buildSection(
-                  title: AppLocalizations.of(context)!.difficulty,
+                  title: "Difficulty",
                   child: addDifficulty(),
                 ),
                 _buildDivider(),
                 _buildSection(
-                  title: AppLocalizations.of(context)!.cost,
+                  title: "Cost",
                   child: addCost(),
                 ),
                 _buildDivider(),
                 _buildSection(
-                  title: AppLocalizations.of(context)!.picture,
+                  title: "Picture : ",
                   child: addPicture(),
                 ),
                 _buildDivider(),
                 _buildSection(
-                  title: AppLocalizations.of(context)!.ingredients,
+                  title: "Ingredients",
                   child: addIngred(),
                 ),
                 _buildDivider(),
                 _buildSection(
-                  title: AppLocalizations.of(context)!.steps,
+                  title: "Steps",
                   child: addSteps(),
                 ),
                 _buildDivider(),
                 _buildSection(
-                  title: AppLocalizations.of(context)!.tags,
+                  title: "Tags",
                   child: addTags(),
                 ),
                 _buildDivider(),
@@ -1283,7 +1276,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
         ),
         onPressed: _submitForm,
         child: Text(
-          AppLocalizations.of(context)!.add,
+          "Add",
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w600,
@@ -1296,22 +1289,22 @@ class _CreateRecipeState extends State<CreateRecipe> {
   void _submitForm() {
     
     final finalRecipeNameFromAddRecipeName = recipeNameFromAddRecipeName ==
-        AppLocalizations.of(context)!.deleted
-        ? AppLocalizations.of(context)!.noTitle
+        "Deleted"
+        ? "No title"
         : recipeNameFromAddRecipeName;
 
     final finalTotalTimeFromAddTotalTime = totalTimeFromAddTotalTime ==
-        AppLocalizations.of(context)!.deleted
+        "Deleted"
         ? ""
         : totalTimeFromAddTotalTime;
 
     final finalVarFromAddDifficulty = varFromAddDifficulty ==
-        AppLocalizations.of(context)!.deleted
+        "Deleted"
         ? ""
         : varFromAddDifficulty;
 
     final finalVarFromAddCost = varFromAddCost ==
-        AppLocalizations.of(context)!.deleted
+        "Deleted"
         ? ""
         : varFromAddCost;
 

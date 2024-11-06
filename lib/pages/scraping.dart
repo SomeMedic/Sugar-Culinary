@@ -14,7 +14,7 @@ import 'package:sugarCulinary/pages/add_tags.dart';
 import 'package:sugarCulinary/pages/add_totaltime.dart';
 import 'package:sugarCulinary/pages/create_steps.dart';
 import 'package:sugarCulinary/utils/dialbox_edit.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:sugarCulinary/pages/recipe_struct.dart';
@@ -76,13 +76,13 @@ class _ScrapingState extends State<Scraping> {
         builder: (context) {
           return AlertDialog(
             content: Text(
-              AppLocalizations.of(context)!.categoryEmpty,
+              "Category is required.",
               textAlign: TextAlign.center,
               style: const TextStyle(color: Colors.red),
             ),
             actions: [
               ElevatedButton(
-                child: Text(AppLocalizations.of(context)!.back),
+                child: Text("Back"),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -123,11 +123,11 @@ class _ScrapingState extends State<Scraping> {
                 _getDataFromAddExistingCategory(context);
               });
             },
-            child: Text(AppLocalizations.of(context)!.addCategoryRequired),
+            child: Text("Add a category (required)"),
           )
         : Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(
-              AppLocalizations.of(context)!.category,
+              "Category",
               style: const TextStyle(
                 fontSize: 16,
               ),
@@ -181,7 +181,7 @@ class _ScrapingState extends State<Scraping> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.recipeName,
+        "Recipe name",
         style: const TextStyle(
           fontSize: 16,
         ),
@@ -194,7 +194,7 @@ class _ScrapingState extends State<Scraping> {
               overflow: TextOverflow.ellipsis,
               widget.scrapRecipeName,
               style: widget.scrapRecipeName ==
-                      AppLocalizations.of(context)!.deleted
+                      "Deleted"
                   ? const TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                   : const TextStyle(
                       fontSize: 16,
@@ -234,7 +234,7 @@ class _ScrapingState extends State<Scraping> {
               onLongPress: () {
                 setState(() {
                   widget.scrapRecipeName =
-                      AppLocalizations.of(context)!.deleted;
+                      "Deleted";
                 });
               },
               child:
@@ -275,7 +275,7 @@ class _ScrapingState extends State<Scraping> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.totalTime,
+        "Total time",
         style: const TextStyle(
           fontSize: 16,
         ),
@@ -283,7 +283,7 @@ class _ScrapingState extends State<Scraping> {
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(widget.scrapTotalTime,
             style: widget.scrapTotalTime ==
-                    AppLocalizations.of(context)!.deleted
+                    "Deleted"
                 ? const TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                 : const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         Row(
@@ -318,7 +318,7 @@ class _ScrapingState extends State<Scraping> {
             InkWell(
               onLongPress: () {
                 setState(() {
-                  widget.scrapTotalTime = AppLocalizations.of(context)!.deleted;
+                  widget.scrapTotalTime = "Deleted";
                   Text(
                     widget.scrapTotalTime,
                     style: const TextStyle(
@@ -366,14 +366,14 @@ class _ScrapingState extends State<Scraping> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.difficulty,
+        "Difficulty",
         style: const TextStyle(
           fontSize: 16,
         ),
       ),
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(scrapDifficulty,
-            style: scrapDifficulty == AppLocalizations.of(context)!.deleted
+            style: scrapDifficulty == "Deleted"
                 ? const TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                 : const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         Row(
@@ -408,7 +408,7 @@ class _ScrapingState extends State<Scraping> {
             InkWell(
               onLongPress: () {
                 setState(() {
-                  scrapDifficulty = AppLocalizations.of(context)!.deleted;
+                  scrapDifficulty = "Deleted";
                 });
               },
               child:
@@ -448,14 +448,14 @@ class _ScrapingState extends State<Scraping> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.cost,
+        "Cost",
         style: const TextStyle(
           fontSize: 16,
         ),
       ),
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Text(scrapCost,
-            style: scrapCost == AppLocalizations.of(context)!.deleted
+            style: scrapCost == "Deleted"
                 ? const TextStyle(fontSize: 10, fontStyle: FontStyle.italic)
                 : const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         Row(
@@ -489,7 +489,7 @@ class _ScrapingState extends State<Scraping> {
             InkWell(
               onLongPress: () {
                 setState(() {
-                  scrapCost = AppLocalizations.of(context)!.deleted;
+                  scrapCost = "Deleted";
                 });
               },
               child:
@@ -545,7 +545,7 @@ class _ScrapingState extends State<Scraping> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: Text(AppLocalizations.of(context)!.close),
+                child: Text("Close"),
               ),
             ],
           );
@@ -574,7 +574,7 @@ class _ScrapingState extends State<Scraping> {
     setState(() {});
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Text(
-        AppLocalizations.of(context)!.picture,
+        "Picture : ",
         style: const TextStyle(
           fontSize: 16,
         ),
@@ -586,7 +586,7 @@ class _ScrapingState extends State<Scraping> {
             },
             child: Text(
               previewImageTextField =
-                  AppLocalizations.of(context)!.previewPicture,
+                  "Preview picture",
               style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -644,7 +644,7 @@ class _ScrapingState extends State<Scraping> {
               child: Row(
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.collapse,
+                    "Collapse",
                     style: const TextStyle(
                       fontSize: 16,
                     ),
@@ -696,7 +696,7 @@ class _ScrapingState extends State<Scraping> {
               child: Row(
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.showIngred,
+                    "Show Ingredients",
                     style: const TextStyle(
                       fontSize: 16,
                     ),
@@ -839,7 +839,7 @@ class _ScrapingState extends State<Scraping> {
               child: Row(
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.collapse,
+                    "Collapse",
                     style: const TextStyle(
                       fontSize: 16,
                     ),
@@ -880,7 +880,7 @@ class _ScrapingState extends State<Scraping> {
               child: Row(
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.showSteps,
+                    "Show steps",
                     style: const TextStyle(
                       fontSize: 16,
                     ),
@@ -928,7 +928,7 @@ class _ScrapingState extends State<Scraping> {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(
-                ' ${AppLocalizations.of(context)!.step} ${index + 1}:\n${widget.scrapStepsRecipe[index]}'),
+                ' ${"Step"} ${index + 1}:\n${widget.scrapStepsRecipe[index]}'),
             trailing: Wrap(
               spacing: -16,
               children: [
@@ -1009,7 +1009,7 @@ class _ScrapingState extends State<Scraping> {
               child: Row(
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.collapse,
+                    "Collapse",
                     style: const TextStyle(
                       fontSize: 16,
                     ),
@@ -1049,12 +1049,7 @@ class _ScrapingState extends State<Scraping> {
               },
               child: Row(
                 children: [
-                  Text(
-                    AppLocalizations.of(context)!.showTags,
-                    style: const TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
+
                   const Icon(
                     Icons.arrow_upward,
                     size: 16, 
@@ -1186,19 +1181,19 @@ class _ScrapingState extends State<Scraping> {
             content: SizedBox(
                 height: 200.0,
                 child: Column(children: [
-                  Text(AppLocalizations.of(context)!.areYouSureExit,
+                  Text("Are you sure you want to exit?",
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.bold)),
                   Center(
-                      child: Text(AppLocalizations.of(context)!.saveEditLater,
+                      child: Text("You can save changes and edit later",
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontSize: 15, fontStyle: FontStyle.italic)))
                 ])),
             actions: <Widget>[
               TextButton(
-                child: Text(AppLocalizations.of(context)!.confirmExit,
+                child: Text("Yes, exit",
                     style: const TextStyle(color: Colors.red)),
                 onPressed: () {
                   setState(() {
@@ -1212,7 +1207,7 @@ class _ScrapingState extends State<Scraping> {
                 },
               ),
               TextButton(
-                child: Text(AppLocalizations.of(context)!.no,
+                child: Text("No",
                     style: const TextStyle(color: Colors.lightGreen)),
                 onPressed: () {
                   Navigator.of(context).pop(false);
@@ -1231,7 +1226,7 @@ class _ScrapingState extends State<Scraping> {
         backgroundColor: AppColors.primary,
         elevation: 0,
         title: Text(
-          AppLocalizations.of(context)!.addFromWeb,
+          "Add from web",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 20,
@@ -1284,7 +1279,7 @@ class _ScrapingState extends State<Scraping> {
         ),
         onPressed: _handleSubmit,
         child: Text(
-          AppLocalizations.of(context)!.add,
+          "Add",
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -1297,22 +1292,22 @@ class _ScrapingState extends State<Scraping> {
   void _handleSubmit() {
     
     final finalscrapRecipeName = widget.scrapRecipeName ==
-            AppLocalizations.of(context)!.deleted
-        ? AppLocalizations.of(context)!.noTitle
+            "Deleted"
+        ? "No title"
         : widget.scrapRecipeName;
 
     final finalscrapTotalTime = widget.scrapTotalTime ==
-            AppLocalizations.of(context)!.deleted
+            "Deleted"
         ? ""
         : widget.scrapTotalTime;
 
     final finalscrapDifficulty = scrapDifficulty ==
-            AppLocalizations.of(context)!.deleted
+            "Deleted"
         ? ""
         : scrapDifficulty;
 
     final finalscrapCost =
-        scrapCost == AppLocalizations.of(context)!.deleted
+        scrapCost == "Deleted"
             ? ""
             : scrapCost;
 

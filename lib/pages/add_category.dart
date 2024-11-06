@@ -4,7 +4,7 @@
 import 'package:sugarCulinary/data/categories_database/categories_names_services.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:sugarCulinary/data/categories_database/categories_names.dart';
 
 class AppColors {
@@ -39,7 +39,7 @@ class _AddExistingCategoryState extends State<AddExistingCategory> {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         title: Text(
-          AppLocalizations.of(context)!.addCategory,
+          "Add a category",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 24,
@@ -130,7 +130,7 @@ class _AddExistingCategoryState extends State<AddExistingCategory> {
             borderRadius: BorderRadius.circular(16),
           ),
           title: Text(
-            AppLocalizations.of(context)!.addCategory,
+            "Add a category",
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.text,
@@ -163,7 +163,7 @@ class _AddExistingCategoryState extends State<AddExistingCategory> {
               children: [
                 _buildDialogButton(
                   context: context,
-                  text: AppLocalizations.of(context)!.cancel,
+                  text: "Cancel",
                   onPressed: () {
                     Navigator.pop(context);
                     _controller.clear();
@@ -173,7 +173,7 @@ class _AddExistingCategoryState extends State<AddExistingCategory> {
                 const SizedBox(width: 16),
                 _buildDialogButton(
                   context: context,
-                  text: AppLocalizations.of(context)!.add,
+                  text: "Add",
                   onPressed: () async {
                     if (_controller.text.trim().isNotEmpty) {
                       var catName = CategoriesNames(_controller.text);

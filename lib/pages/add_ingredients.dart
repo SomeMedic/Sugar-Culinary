@@ -4,7 +4,7 @@
 
 import 'package:sugarCulinary/utils/dialbox_add_ingredient_quantity.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -38,7 +38,6 @@ class _AddIngredState extends State<AddIngred> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    ingredientList = AppLocalizations.of(context)!.listCommonIngredients.split(',');
     filteredList = ingredientList;
     _searchController = TextEditingController();
   }
@@ -60,7 +59,7 @@ class _AddIngredState extends State<AddIngred> {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         title: Text(
-          AppLocalizations.of(context)!.addIngred,
+          "Add ingredients",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 24,
@@ -91,7 +90,7 @@ class _AddIngredState extends State<AddIngred> {
                         icon: Icon(Icons.clear, color: AppColors.primary),
                       )
                     : null,
-                hintText: AppLocalizations.of(context)!.searchIngred,
+                hintText: "Search an ingredient",
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: AppColors.primary),
@@ -178,7 +177,7 @@ class _AddIngredState extends State<AddIngred> {
                 Container(
                   padding: EdgeInsets.all(16),
                   child: Text(
-                    AppLocalizations.of(context)!.selectedIngredients,
+                    "Selected ingredients",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -250,7 +249,7 @@ class _AddIngredState extends State<AddIngred> {
                           Navigator.pop(context, allIngredientSelected);
                         },
                         child: Text(
-                          AppLocalizations.of(context)!.add,
+                          "Add",
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
@@ -276,7 +275,7 @@ class _AddIngredState extends State<AddIngred> {
           borderRadius: BorderRadius.circular(16),
         ),
         title: Text(
-          AppLocalizations.of(context)!.addCustomIngredient,
+          "Add custom ingredient",
           textAlign: TextAlign.center,
           style: TextStyle(
             color: AppColors.text,
@@ -291,17 +290,17 @@ class _AddIngredState extends State<AddIngred> {
             children: [
               _buildTextField(
                 controller: _controller,
-                hintText: AppLocalizations.of(context)!.ingredName,
+                hintText: "Ingredient name",
               ),
               SizedBox(height: 16),
               _buildTextField(
                 controller: _controller2,
-                hintText: AppLocalizations.of(context)!.quantity,
+                hintText: "Quantity",
               ),
               SizedBox(height: 16),
               _buildTextField(
                 controller: _controller3,
-                hintText: AppLocalizations.of(context)!.unit,
+                hintText: "Unit",
               ),
             ],
           ),
@@ -311,7 +310,7 @@ class _AddIngredState extends State<AddIngred> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildDialogButton(
-                text: AppLocalizations.of(context)!.cancel,
+                text: "Cancel",
                 onPressed: () {
                   Navigator.pop(context);
                   _clearControllers();
@@ -320,7 +319,7 @@ class _AddIngredState extends State<AddIngred> {
               ),
               SizedBox(width: 16),
               _buildDialogButton(
-                text: AppLocalizations.of(context)!.add,
+                text: "Add",
                 onPressed: () {
                   if (_controller.text.isNotEmpty) {
                     setState(() {

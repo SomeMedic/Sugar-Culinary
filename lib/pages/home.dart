@@ -15,7 +15,7 @@ import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sugarCulinary/data/recipe_database/database.dart';
 import 'package:marmiteur/marmiteur.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:sugarCulinary/pages/categories_page.dart';
 
 class AppColors {
@@ -100,20 +100,20 @@ class _HomeState extends State<Home> {
               context: context,
               builder: (context) {
                 return AlertDialog(
-                  title: Text(AppLocalizations.of(context)!.addCategory),
+                  title: Text("Add a category"),
                   content: TextField(
                     controller: _controller,
                   ),
                   actions: [
                     ElevatedButton(
-                      child: Text(AppLocalizations.of(context)!.cancel),
+                      child: Text("Cancel"),
                       onPressed: () async {
                         _controller.clear();
                         Navigator.pop(context);
                       },
                     ),
                     ElevatedButton(
-                      child: Text(AppLocalizations.of(context)!.add),
+                      child: Text("Add"),
                       onPressed: () async {
                         setState(() {
                           isEditDeleteMode = false;
@@ -168,9 +168,9 @@ class _HomeState extends State<Home> {
             child: AlertDialog(
               title: Column(
                 children: [
-                  Text(AppLocalizations.of(context)!.areYouSure),
+                  Text("Are you sure?"),
                   Text(
-                    AppLocalizations.of(context)!.confirmLongPress1,
+                    "Confirm the desired option with a long press",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
                   ),
@@ -189,7 +189,7 @@ class _HomeState extends State<Home> {
                     },
                     onPressed: () {},
                     child: Text(
-                      AppLocalizations.of(context)!.deleteAllRecipes,
+                      "Delete all recipes",
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.red),
                     ),
@@ -205,7 +205,7 @@ class _HomeState extends State<Home> {
                     },
                     onPressed: () {},
                     child: Text(
-                      AppLocalizations.of(context)!.deleteAllRecipesAndCategories,
+                      "Delete all recipes and categories",
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.red),
                     ),
@@ -220,7 +220,7 @@ class _HomeState extends State<Home> {
                     });
                     Navigator.of(context).pop();
                   },
-                  child: Text(AppLocalizations.of(context)!.back),
+                  child: Text("Back"),
                 ),
               ],
               
@@ -274,11 +274,11 @@ class _HomeState extends State<Home> {
               title: Column(
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.areYouSure,
+                    "Are you sure?",
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    AppLocalizations.of(context)!.confirmLongPress1,
+                    "Confirm the desired option with a long press",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
                   ),
@@ -294,7 +294,7 @@ class _HomeState extends State<Home> {
                 },
                 onPressed: () {},
                 child: Text(
-                  AppLocalizations.of(context)!.actionAfterLongPress1,
+                  "Yes, I want to delete this category and their recipes",
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.red),
                 ),
@@ -307,7 +307,7 @@ class _HomeState extends State<Home> {
                     });
                     Navigator.of(context).pop();
                   },
-                  child: Text(AppLocalizations.of(context)!.back),
+                  child: Text("Back"),
                 ),
               ],
               
@@ -323,13 +323,13 @@ class _HomeState extends State<Home> {
         builder: (context) {
           return AlertDialog(
             content: Text(
-              AppLocalizations.of(context)!.errorScrap,
+              "Error : this URL is not supported",
               textAlign: TextAlign.center,
               style: TextStyle(color: Colors.red),
             ),
             actions: [
               ElevatedButton(
-                child: Text(AppLocalizations.of(context)!.back),
+                child: Text("Back"),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -402,7 +402,7 @@ class _HomeState extends State<Home> {
             content: SizedBox(
               height: 35.0,
               child: Text(
-                AppLocalizations.of(context)!.quitAppConfirm,
+                "Quit the app?",
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
@@ -415,7 +415,7 @@ class _HomeState extends State<Home> {
                   children: [
                     TextButton(
                       child: Text(
-                        AppLocalizations.of(context)!.confirmExit,
+                        "Yes, exit",
                         style: TextStyle(color: Colors.red),
                       ),
                       onPressed: () {
@@ -431,7 +431,7 @@ class _HomeState extends State<Home> {
                         width: 8), 
                     TextButton(
                       child: Text(
-                        AppLocalizations.of(context)!.no,
+                        "No",
                         style: TextStyle(color: Colors.lightGreen),
                       ),
                       onPressed: () {
@@ -453,7 +453,7 @@ class _HomeState extends State<Home> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          AppLocalizations.of(context)!.addFromWeb,
+          "Add from web",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -496,7 +496,7 @@ class _HomeState extends State<Home> {
                 isFloatingActionButtonPressed = false;
               });
             },
-            child: Text(AppLocalizations.of(context)!.cancel),
+            child: Text("Cancel"),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -513,7 +513,7 @@ class _HomeState extends State<Home> {
                 await _handleWebRecipe(recipeURL);
               }
             },
-            child: Text(AppLocalizations.of(context)!.add),
+            child: Text("Add"),
           ),
         ],
       ),
@@ -531,7 +531,7 @@ class _HomeState extends State<Home> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            AppLocalizations.of(context)!.errorScrapingRecipe,
+            "Error : this URL is not supported",
             style: TextStyle(color: AppColors.background),
           ),
           backgroundColor: Colors.redAccent,
@@ -570,7 +570,7 @@ class _HomeState extends State<Home> {
         });
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.pressAgainToExit),
+            content: Text("Press again to exit"),
             duration: Duration(seconds: 2),
           ),
         );
@@ -587,7 +587,7 @@ class _HomeState extends State<Home> {
           backgroundColor: AppColors.primary,
           elevation: 0,
           title: Text(
-            AppLocalizations.of(context)!.appName,
+            "Sugar Culinary",
             style: TextStyle(
               color: AppColors.background,
               fontSize: 24,
@@ -636,7 +636,7 @@ class _HomeState extends State<Home> {
           ),
           _buildDrawerItem(
             icon: Icons.home,
-            title: AppLocalizations.of(context)!.home,
+            title: "Home",
             onTap: () {
               _searchController.clear();
               isSearchPressed = false;
@@ -645,7 +645,7 @@ class _HomeState extends State<Home> {
           ),
           _buildDrawerItem(
             icon: Icons.language_sharp,
-            title: AppLocalizations.of(context)!.language,
+            title: "Language",
             onTap: () {
               _searchController.clear();
               isSearchPressed = false;
@@ -654,7 +654,7 @@ class _HomeState extends State<Home> {
           ),
           _buildDrawerItem(
             icon: Icons.info_outline,
-            title: AppLocalizations.of(context)!.about,
+            title: "About",
             onTap: () {
               _searchController.clear();
               isSearchPressed = false;
@@ -691,7 +691,7 @@ class _HomeState extends State<Home> {
       child: TextField(
         controller: _searchController,
         decoration: InputDecoration(
-          hintText: AppLocalizations.of(context)!.search,
+          hintText: "Search",
           prefixIcon: Icon(Icons.search, color: AppColors.primary),
           suffixIcon: IconButton(
             icon: Icon(Icons.clear, color: AppColors.primary),
@@ -730,12 +730,12 @@ class _HomeState extends State<Home> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           _buildExtendedFloatingActionButton(
-            label: AppLocalizations.of(context)!.addFromWeb,
+            label: "Add from web",
             onPressed: () => _showAddFromWebDialog(),
           ),
           SizedBox(height: 16),
           _buildExtendedFloatingActionButton(
-            label: AppLocalizations.of(context)!.create,
+            label: "Create recipe",
             onPressed: () {
               setState(() {
                 isFloatingActionButtonPressed = false;
@@ -747,7 +747,7 @@ class _HomeState extends State<Home> {
           ),
           SizedBox(height: 16),
           _buildExtendedFloatingActionButton(
-            label: AppLocalizations.of(context)!.categories,
+            label: "Categories",
             onPressed: () {
               Navigator.push(
                 context,
@@ -765,7 +765,7 @@ class _HomeState extends State<Home> {
               });
             },
             child: Text(
-              AppLocalizations.of(context)!.back,
+              "Back",
               style: TextStyle(
                 color: AppColors.primary,
                 fontSize: 16,
@@ -790,7 +790,7 @@ class _HomeState extends State<Home> {
             );
           },
           label: Text(
-            AppLocalizations.of(context)!.categories,
+            "Categories",
             style: TextStyle(color: AppColors.background),
           ),
         ),
@@ -806,7 +806,7 @@ class _HomeState extends State<Home> {
             });
           },
           label: Text(
-            AppLocalizations.of(context)!.addDelightfulRecipe,
+            "Add delightful recipe",
             style: TextStyle(
               color: AppColors.background,
               fontSize: 16,
@@ -840,7 +840,7 @@ class _HomeState extends State<Home> {
       return Container(
         alignment: Alignment.center,
         child: Text(
-          AppLocalizations.of(context)!.noRecipes,
+          "No recipes to display.",
           style: TextStyle(color: Colors.blueGrey),
         ),
       );
@@ -871,7 +871,7 @@ class _HomeState extends State<Home> {
                     children: [
                       ListTile(
                         leading: Icon(Icons.edit),
-                        title: Text(AppLocalizations.of(context)!.editRecipe),
+                        title: Text("Edit recipe"),
                         onTap: () {
                           
                           Navigator.pop(context); 
@@ -907,7 +907,7 @@ class _HomeState extends State<Home> {
                       ListTile(
                         leading: Icon(Icons.delete, color: Colors.red),
                         title: Text(
-                          AppLocalizations.of(context)!.deleteRecipe,
+                          "Delete recipe",
                           style: TextStyle(color: Colors.red),
                         ),
                         onTap: () {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sugarCulinary/data/categories_database/categories_names.dart';
 import 'package:sugarCulinary/pages/filtered_name_recipe.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:sugarCulinary/pages/add_category.dart';
 
 class AppColors {
@@ -26,7 +26,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.categories,
+          "Categories",
           style: TextStyle(color: AppColors.background),
         ),
         backgroundColor: AppColors.primary,
@@ -37,7 +37,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
           if (box.isEmpty) {
             return Center(
               child: Text(
-                AppLocalizations.of(context)!.noCategories,
+                "There are no categories",
                 style: TextStyle(color: Colors.blueGrey),
               ),
             );

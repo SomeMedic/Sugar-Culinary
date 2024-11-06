@@ -14,7 +14,7 @@ import 'package:sugarCulinary/pages/home.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,13 +52,12 @@ class MyApp extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cooky',
+      title: 'Sugar Culinary',
       
       locale:
           checkLanguagePref(), 
 
       localizationsDelegates: const [
-        AppLocalizations.delegate, 
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

@@ -3,7 +3,7 @@
 import 'package:sugarCulinary/data/language_database/language_database.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -37,7 +37,7 @@ class _LanguageState extends State<Language> {
     super.didChangeDependencies();
 
     supportedLanguage =
-        AppLocalizations.of(context)!.supportedLanguage.split(',');
+        "English,French,Your device language (english and french available)".split(',');
   }
 
   
@@ -61,7 +61,7 @@ class _LanguageState extends State<Language> {
           backgroundColor: AppColors.primary,
           elevation: 0,
           title: Text(
-            AppLocalizations.of(context)!.language,
+            "Language",
             style: TextStyle(
               color: AppColors.background,
               fontSize: 24,
@@ -116,17 +116,17 @@ class _LanguageState extends State<Language> {
           ),
           _buildDrawerItem(
             icon: Icons.home,
-            title: AppLocalizations.of(context)!.home,
+            title: "Home",
             onTap: () => Navigator.popAndPushNamed(context, '/home'),
           ),
           _buildDrawerItem(
             icon: Icons.language_sharp,
-            title: AppLocalizations.of(context)!.language,
+            title: "Language",
             onTap: () => Navigator.popAndPushNamed(context, '/language'),
           ),
           _buildDrawerItem(
             icon: Icons.info_outline,
-            title: AppLocalizations.of(context)!.about,
+            title: "About",
             onTap: () => Navigator.popAndPushNamed(context, '/about'),
           ),
         ],
@@ -189,7 +189,7 @@ class _LanguageState extends State<Language> {
               foregroundColor: Colors.lightGreen,
             ),
             onPressed: () => Navigator.of(context).pop(),
-            child: Text(AppLocalizations.of(context)!.ok),
+            child: Text("Ok"),
           ),
         ],
       ),

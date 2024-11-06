@@ -3,7 +3,7 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -92,7 +92,7 @@ class DialogEditRecipeField extends StatelessWidget {
                   },
                   icon: Icon(Icons.lightbulb_outline),
                   label: Text(
-                    AppLocalizations.of(context)!.showSuggestion,
+                    "Show suggestions",
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ),
@@ -107,7 +107,7 @@ class DialogEditRecipeField extends StatelessWidget {
                       ),
                       onPressed: () => Navigator.pop(context),
                       child: Text(
-                        AppLocalizations.of(context)!.cancel,
+                        "Cancel",
                         style: TextStyle(fontWeight: FontWeight.w500),
                       ),
                     ),
@@ -122,7 +122,7 @@ class DialogEditRecipeField extends StatelessWidget {
                       ),
                       onPressed: () => Navigator.pop(context, controller.text),
                       child: Text(
-                        AppLocalizations.of(context)!.add,
+                        "Add",
                         style: TextStyle(fontWeight: FontWeight.w600),
                       ),
                     ),

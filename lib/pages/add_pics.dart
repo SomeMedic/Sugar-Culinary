@@ -5,7 +5,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AppColors {
   static const Color primary = Color(0xFF2196F3);      
@@ -61,7 +61,7 @@ class _MyImagePickerPageState extends State<MyImagePickerPage> {
       appBar: AppBar(
         backgroundColor: AppColors.primary,
         title: Text(
-          AppLocalizations.of(context)!.addPicture,
+          "Add picture",
           style: TextStyle(
             color: AppColors.background,
             fontSize: 24,
@@ -100,7 +100,7 @@ class _MyImagePickerPageState extends State<MyImagePickerPage> {
                             ),
                             SizedBox(height: 16),
                             Text(
-                              AppLocalizations.of(context)!.noPic,
+                              "No photo selected",
                               style: TextStyle(
                                 color: AppColors.text.withOpacity(0.6),
                                 fontSize: 16,
@@ -120,13 +120,13 @@ class _MyImagePickerPageState extends State<MyImagePickerPage> {
               SizedBox(height: 24),
               _buildButton(
                 icon: Icons.photo_library,
-                text: AppLocalizations.of(context)!.chooseGallery,
+                text: "Choose from gallery",
                 onPressed: () => _pickImage(ImageSource.gallery),
               ),
               SizedBox(height: 12),
               _buildButton(
                 icon: Icons.camera_alt,
-                text: AppLocalizations.of(context)!.takePic,
+                text: "Take a picture",
                 onPressed: () => _pickImage(ImageSource.camera),
               ),
               SizedBox(height: 24),
@@ -144,7 +144,7 @@ class _MyImagePickerPageState extends State<MyImagePickerPage> {
                     ? () => Navigator.pop(context, pathImageSelected)
                     : null,
                 child: Text(
-                  AppLocalizations.of(context)!.addPicture2,
+                  "Add the picture",
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
